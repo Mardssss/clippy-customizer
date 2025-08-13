@@ -19,17 +19,35 @@ export const partOptions = {
         '', // No eyebrows
         'images/eyebrows_1.svg',
         'images/eyebrows_2.svg',
-        'images/eyebrows_3.svg'
+        'images/eyebrows_3.svg',
+		'images/eyebrows_4.svg',
+		'images/eyebrows_5.svg',
+		'images/eyebrows_6.svg',
+		'images/eyebrows_7.svg',
+		'images/eyebrows_8.svg',
+		'images/eyebrows_9.svg',
+		'images/eyebrows_10.svg',
+		'images/eyebrows_11.svg'
     ],
     'mustache': [
         '', // No mustache
         'images/mustache_1.svg',
-        'images/mustache_2.svg'
+        'images/mustache_2.svg',
+		'images/mustache_3.svg',
+		'images/mustache_4.svg',
+		'images/mustache_5.svg',
+		'images/mustache_6.svg'
     ],
     'head-accessory': [
         '', // No head accessory
         'images/head_accessory_1.svg',
-        'images/head_accessory_2.svg'
+        'images/head_accessory_2.svg',
+		'images/head_accessory_3.svg',
+		'images/head_accessory_4.svg',
+		'images/head_accessory_5.svg',
+		'images/head_accessory_6.svg',
+		'images/head_accessory_7.svg',
+		'images/head_accessory_8.svg'
     ],
     'eye-accessory': [
         '', // No eye accessory
