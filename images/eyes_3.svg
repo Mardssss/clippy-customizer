@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #ff7bac;
+      }
+    </style>
+  </defs>
+  <g>
+    <ellipse class="cls-1" cx="412.04" cy="400.06" rx="105.15" ry="84.56"/>
+    <ellipse cx="411.72" cy="400.06" rx="51.88" ry="41.72"/>
+  </g>
+  <g>
+    <ellipse class="cls-1" cx="671.19" cy="400.06" rx="105.15" ry="84.56"/>
+    <ellipse cx="670.87" cy="400.06" rx="51.88" ry="41.72"/>
+  </g>
+</svg>

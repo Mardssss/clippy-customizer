@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character Customizer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="tittle">
+        <h1>Make your clippy</h1>
+    </div>
+    <div class="character-container">
+        <div class="layer background"></div>
+        <div class="layer base-body"></div>
+        <div class="layer eyes"></div>
+        <div class="layer eyebrows"></div>
+        <div class="layer mustache"></div>
+        <div class="layer head-accessory"></div>
+        <div class="layer eye-accessory"></div>
+    </div>
+    <div class="controls">
+        <div class="control-group">
+            <label>Base Body:</label>
+            <button onclick="cyclePart('base-body', -1)">←</button>
+            <button onclick="cyclePart('base-body', 1)">→</button>
+        </div>
+        <div class="control-group">
+            <label>Eyes:</label>
+            <button onclick="cyclePart('eyes', -1)">←</button>
+            <button onclick="cyclePart('eyes', 1)">→</button>
+        </div>
+        <div class="control-group">
+            <label>Eyebrows:</label>
+            <button onclick="cyclePart('eyebrows', -1)">←</button>
+            <button onclick="cyclePart('eyebrows', 1)">→</button>
+        </div>
+        <div class="control-group">
+            <label>Mustache:</label>
+            <button onclick="cyclePart('mustache', -1)">←</button>
+            <button onclick="cyclePart('mustache', 1)">→</button>
+        </div>
+        <div class="control-group">
+            <label>Head Accessory:</label>
+            <button onclick="cyclePart('head-accessory', -1)">←</button>
+            <button onclick="cyclePart('head-accessory', 1)">→</button>
+        </div>
+        <div class="control-group">
+            <label>Eye Accessory:</label>
+            <button onclick="cyclePart('eye-accessory', -1)">←</button>
+            <button onclick="cyclePart('eye-accessory', 1)">→</button>
+        </div>
+        <div class="download-options">
+            <label>Download:</label>
+            <select id="format">
+                <option value="image/png">PNG</option>
+                <option value="image/jpeg">JPEG</option>
+                <option value="image/svg+xml">SVG</option>
+            </select>
+            <select id="resolution">
+                <option value="1080">1080x1080</option>
+                <option value="512">512x512</option>
+                <option value="1920">1920x1920</option>
+            </select>
+            <button onclick="exportCharacter()">Download</button>
+            <form action="https://www.paypal.com/donate" method="post" target="_blank">
+                <input type="hidden" name="business" value="migueldias.contact@gmail.com" />
+                <input type="hidden" name="no_recurring" value="0" />
+                <input type="hidden" name="item_name" value="Support Clippy Customizer" />
+                <input type="hidden" name="currency_code" value="USD" />
+                <input type="submit" value="Donate" class="donate-button" />
+            </form>
+        </div>
+    </div>
+    <script type="module" src="scripts.js"></script>
+</body>
+</html>

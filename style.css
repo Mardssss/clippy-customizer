@@ -1,0 +1,89 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    background-color: #f0f0f0;
+    margin: 0;
+}
+.character-container {
+    position: relative;
+    width: 300px; /* Default preview size */
+    height: 300px;
+    border: 1px solid #ccc;
+    background-color: transparent;
+    overflow: hidden;
+}
+.layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.background { z-index: 1; }
+.base-body { z-index: 2; }
+.eyes { z-index: 3; }
+.eyebrows { z-index: 4; }
+.mustache { z-index: 5; }
+.head-accessory { z-index: 6; }
+.eye-accessory { z-index: 7; }
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    max-width: 300px; /* Match container width */
+}
+.control-group {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+button {
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.donate-button {
+    padding: 5px 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.download-options {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+select {
+    padding: 5px;
+    font-size: 16px;
+}
+.tittle {
+    text-align: center;
+}
+/* Mobile adjustments */
+@media (max-width: 600px) {
+    .character-container {
+        width: 80vw; /* Use viewport width for smaller screens */
+        height: 80vw; /* Maintain square aspect ratio */
+        max-width: 300px;
+        max-height: 300px;
+    }
+    .controls {
+        width: 80vw;
+        max-width: 300px;
+    }
+    .control-group {
+        flex-wrap: wrap; /* Allow buttons to wrap if needed */
+    }
+    button, select, .donate-button {
+        font-size: 14px; /* Smaller text for mobile */
+        padding: 8px;
+    }
+}

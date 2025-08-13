@@ -1,0 +1,17 @@
+{
+  "name": "clippy-customizer",
+  "version": "1.0.0",
+  "description": "A character customizer web app for creating and downloading custom clippy avatars",
+  "main": "src/scripts.js",
+  "scripts": {
+    "start": "echo 'Serve files locally or deploy to GitHub Pages' && exit 0",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["character", "customizer", "avatar", "svg"],
+  "author": "Mardssss",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mardssss/clippy-customizer.git"
+  }
+}
