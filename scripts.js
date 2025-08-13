@@ -1,8 +1,9 @@
-import { partOptions, currentIndices, setPart, cyclePart } from './parts.js';
+import { partOptions, currentIndices, setPart, cyclePart, initializeColorPickers } from './parts.js';
 import { exportCharacter } from './export.js';
 
-// Initialize defaults
+// Initialize defaults and color pickers
 Object.keys(currentIndices).forEach(part => {
+    initializeColorPickers(part);
     setPart(part, partOptions[part][currentIndices[part]]);
 });
 

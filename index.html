@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Character Customizer</title>
     <link rel="stylesheet" href="style.css">
+	<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 </head>
 <body>
     <div class="tittle">
@@ -20,35 +21,47 @@
         <div class="layer eye-accessory"></div>
     </div>
     <div class="controls">
-        <div class="control-group">
+        <div class="control-group" data-part="background">
+            <label>Background:</label>
+            <button onclick="cyclePart('background', -1)"><i class="material-symbols-outlined">chevron_left</i></button>
+            <button onclick="cyclePart('background', 1)"><i class="material-symbols-outlined">chevron_right</i></button>
+			<div class="color-pickers" id="background-colors"></div>
+        </div>
+        <div class="control-group" data-part="base-body">
             <label>Base Body:</label>
-            <button onclick="cyclePart('base-body', -1)">←</button>
-            <button onclick="cyclePart('base-body', 1)">→</button>
+            <button onclick="cyclePart('base-body', -1)"><i class="material-symbols-outlined">chevron_backward</i></button>
+            <button onclick="cyclePart('base-body', 1)"><i class="material-symbols-outlined">chevron_right</i></button>
+            <div class="color-pickers" id="base-body-colors"></div>
         </div>
-        <div class="control-group">
+        <div class="control-group" data-part="eyes">
             <label>Eyes:</label>
-            <button onclick="cyclePart('eyes', -1)">←</button>
-            <button onclick="cyclePart('eyes', 1)">→</button>
+            <button onclick="cyclePart('eyes', -1)"><i class="material-symbols-outlined">chevron_backward</i></button>
+            <button onclick="cyclePart('eyes', 1)"><i class="material-symbols-outlined">chevron_right</i></button>
+            <div class="color-pickers" id="eyes-colors"></div>
         </div>
-        <div class="control-group">
+        <div class="control-group" data-part="eyebrows">
             <label>Eyebrows:</label>
-            <button onclick="cyclePart('eyebrows', -1)">←</button>
-            <button onclick="cyclePart('eyebrows', 1)">→</button>
+            <button onclick="cyclePart('eyebrows', -1)"><i class="material-symbols-outlined">chevron_left</i></button>
+            <button onclick="cyclePart('eyebrows', 1)"><i class="material-symbols-outlined">chevron_right</i></button>
+            <div class="color-pickers" id="eyebrows-colors"></div>
         </div>
-        <div class="control-group">
+        <div class="control-group" data-part="mustache">
             <label>Mustache:</label>
-            <button onclick="cyclePart('mustache', -1)">←</button>
-            <button onclick="cyclePart('mustache', 1)">→</button>
+            <button onclick="cyclePart('mustache', -1)"><i class="material-symbols-outlined">chevron_left</i></button>
+            <button onclick="cyclePart('mustache', 1)"><i class="material-symbols-outlined">chevron_right</i></button>
+            <div class="color-pickers" id="mustache-colors"></div>
         </div>
-        <div class="control-group">
+        <div class="control-group" data-part="head-accessory">
             <label>Head Accessory:</label>
-            <button onclick="cyclePart('head-accessory', -1)">←</button>
-            <button onclick="cyclePart('head-accessory', 1)">→</button>
+            <button onclick="cyclePart('head-accessory', -1)"><i class="material-symbols-outlined">chevron_left</i></button>
+            <button onclick="cyclePart('head-accessory', 1)"><i class="material-symbols-outlined">chevron_right</i></button>
+            <div class="color-pickers" id="head-accessory-colors"></div>
         </div>
-        <div class="control-group">
+        <div class="control-group" data-part="eye-accessory">
             <label>Eye Accessory:</label>
-            <button onclick="cyclePart('eye-accessory', -1)">←</button>
-            <button onclick="cyclePart('eye-accessory', 1)">→</button>
+            <button onclick="cyclePart('eye-accessory', -1)"><i class="material-symbols-outlined">chevron_left</i></button>
+            <button onclick="cyclePart('eye-accessory', 1)"><i class="material-symbols-outlined">chevron_right</i></button>
+            <div class="color-pickers" id="eye-accessory-colors"></div>
         </div>
         <div class="download-options">
             <label>Download:</label>

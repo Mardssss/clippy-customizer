@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg id="a" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080">
-  <path d="m475.42,520h129.17c15.53,0,28.13,12.6,28.13,28.13v57.41h-185.43v-57.41c0-15.53,12.6-28.13,28.13-28.13Z" fill="#333"/>
+  <rect width="1080" height="1080" fill="#e6e6e6"/>
 </svg>

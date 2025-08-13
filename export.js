@@ -6,13 +6,18 @@ export async function exportCharacter() {
     canvas.height = resolution;
     const ctx = canvas.getContext('2d');
 
-    // Clear canvas with transparent background for PNG/SVG
-    if (format === 'image/png' || format === 'image/svg+xml') {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-    } else {
-        // White background for JPEG
+    // Apply background color for PNG/JPEG if no SVG background is selected
+    const backgroundLayer = document.querySelector('.background');
+    const backgroundImage = partOptions['background'][currentIndices['background']];
+    if (!backgroundImage && (format === 'image/png' || format === 'image/jpeg')) {
+        ctx.fillStyle = partColors['background'] || '#ffffff';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+    } else if (format === 'image/jpeg') {
+        // White background for JPEG if SVG background is selected
         ctx.fillStyle = '#ffffff';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
+    } else {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
     }
 
     // Get visible layers
@@ -34,7 +39,10 @@ export async function exportCharacter() {
                     ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
                     resolve();
                 };
-                img.onerror = resolve;
+                img.onerror = () => {
+                    console.error(`Failed to load image for layer ${layer.classList[1]}:`, url);
+                    resolve();
+                };
             });
         }
         const dataURL = canvas.toDataURL(format);
@@ -43,21 +51,34 @@ export async function exportCharacter() {
         link.download = `custom-character.${format.split('/')[1]}`;
         link.click();
     } else {
-        // For SVG export, combine SVGs into a single SVG
+        // For SVG export, combine SVGs with applied colors
         let svgContent = `<svg width="${resolution}" height="${resolution}" xmlns="http://www.w3.org/2000/svg">`;
+        // Add background color as a rect if no SVG background
+        if (!backgroundImage) {
+            svgContent += `<rect width="100%" height="100%" fill="${partColors['background'] || '#ffffff'}" />`;
+        }
         for (const layer of layers) {
-            const bg = window.getComputedStyle(layer).backgroundImage;
-            const urlMatch = bg.match(/url\(["']?([^"']*)["']?\)/);
-            const url = urlMatch ? urlMatch[1] : null;
+            const part = layer.classList[1];
+            const url = partOptions[part][currentIndices[part]];
             if (!url) continue;
             try {
                 const response = await fetch(url);
-                const svgText = await response.text();
-                // Extract inner content (remove outer <svg> tags)
-                const innerContent = svgText.replace(/<svg[^>]*>|<\/svg>/gi, '');
+                if (!response.ok) throw new Error(`Failed to fetch ${url}: ${response.statusText}`);
+                let svgText = await response.text();
+                const parser = new DOMParser();
+                const svgDoc = parser.parseFromString(svgText, 'image/svg+xml');
+                const elements = svgDoc.querySelectorAll('[fill]');
+                elements.forEach(el => {
+                    const originalColor = el.getAttribute('fill')?.toLowerCase();
+                    if (originalColor && partColors[part]?.[originalColor]) {
+                        el.setAttribute('fill', partColors[part][originalColor]);
+                    }
+                });
+                const serializer = new XMLSerializer();
+                const innerContent = serializer.serializeToString(svgDoc.documentElement).replace(/<svg[^>]*>|<\/svg>/gi, '');
                 svgContent += innerContent;
             } catch (e) {
-                console.error('Failed to fetch SVG:', e);
+                console.error(`Failed to fetch SVG for ${part}:`, e);
             }
         }
         svgContent += '</svg>';
@@ -71,3 +92,6 @@ export async function exportCharacter() {
         URL.revokeObjectURL(url);
     }
 }
+
+// Import partOptions, currentIndices, and partColors for background handling
+import { partOptions, currentIndices, partColors } from './parts.js';

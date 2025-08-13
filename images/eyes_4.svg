@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="a" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080">
+  <ellipse cx="412.21" cy="400.06" rx="105.15" ry="84.56" fill="#e5e7eb"/>
+  <ellipse cx="411.88" cy="400.06" rx="51.88" ry="41.72" fill="#333"/>
+  <ellipse cx="671.36" cy="400.06" rx="105.15" ry="84.56" fill="#e5e7eb"/>
+  <ellipse cx="671.03" cy="400.06" rx="51.88" ry="41.72" fill="#333"/>
+  <path d="m776.5,400.05h-210.29c0-46.7,47.07-84.55,105.15-84.55s105.14,37.85,105.14,84.55Z" fill="#ff6e6a"/>
+  <path d="m517.35,400.05h-210.29c0-46.7,47.07-84.55,105.15-84.55s105.14,37.85,105.14,84.55Z" fill="#ff6e6a"/>
+</svg>
