@@ -2,10 +2,11 @@ export const partOptions = {
     'background': [
         '', // No background (solid color)
         'images/background_1.svg', // Pattern 1
+		'images/background_2.svg',
+		'images/background_3.svg',
     ],
     'base-body': [
-        '', // No body
-        'images/body_1.svg'
+        'images/body_1.svg',
     ],
     'eyes': [
         '', // No eyes
@@ -27,7 +28,8 @@ export const partOptions = {
 		'images/eyebrows_8.svg',
 		'images/eyebrows_9.svg',
 		'images/eyebrows_10.svg',
-		'images/eyebrows_11.svg'
+		'images/eyebrows_11.svg',
+		'images/eyebrows_12.svg'
     ],
     'mustache': [
         '', // No mustache
@@ -47,7 +49,6 @@ export const partOptions = {
 		'images/head_accessory_5.svg',
 		'images/head_accessory_6.svg',
 		'images/head_accessory_7.svg',
-		'images/head_accessory_8.svg'
     ],
     'eye-accessory': [
         '', // No eye accessory
@@ -59,7 +60,7 @@ export const partOptions = {
 
 export const currentIndices = {
     'background': 1,
-    'base-body': 1,
+    'base-body': 0,
     'eyes': 1,
     'eyebrows': 1,
     'mustache': 0,

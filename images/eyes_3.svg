@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg id="a" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080">
-  <ellipse cx="410.59" cy="400.06" rx="105.15" ry="84.56" fill="#e5e7eb"/>
-  <ellipse cx="410.26" cy="400.06" rx="51.88" ry="41.72" fill="#333"/>
-  <ellipse cx="669.74" cy="400.06" rx="105.15" ry="84.56" fill="#e5e7eb"/>
-  <ellipse cx="669.41" cy="400.06" rx="51.88" ry="41.72" fill="#333"/>
-  <path d="m515.73,400.05h-210.29c0-46.7,47.07-84.55,105.15-84.55s105.14,37.85,105.14,84.55Z" fill="#ff6e6a"/>
+  <g>
+    <ellipse cx="399.13" cy="397.12" rx="80.61" ry="64.82" fill="#e5e7eb"/>
+    <ellipse cx="398.88" cy="397.12" rx="39.77" ry="31.98" fill="#1a1a1a"/>
+    <ellipse cx="597.8" cy="397.12" rx="80.61" ry="64.82" fill="#e5e7eb"/>
+    <ellipse cx="597.55" cy="397.12" rx="39.77" ry="31.98" fill="#1a1a1a"/>
+  </g>
+  <g>
+    <ellipse cx="400.39" cy="396.98" rx="80.25" ry="64.53" fill="#e5e7eb"/>
+    <ellipse cx="400.14" cy="396.98" rx="39.59" ry="31.84" fill="#333"/>
+    <ellipse cx="598.16" cy="396.98" rx="80.25" ry="64.53" fill="#e5e7eb"/>
+    <ellipse cx="597.91" cy="396.98" rx="39.59" ry="31.84" fill="#333"/>
+    <path d="m480.63,396.98h-160.49c0-35.64,35.92-64.53,80.25-64.53s80.24,28.89,80.24,64.53Z" fill="#ff6e6a"/>
+  </g>
 </svg>
