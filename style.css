@@ -3,12 +3,10 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 24px;
-    padding: 24px;
-    background-color: #f8fafc;
+    background-color: wheat;
     margin: 0;
     color: #1e293b;
-    line-height: 1.6;
+    gap: 15px;
 }
 
 h1.tittle {
@@ -23,9 +21,10 @@ h1.tittle {
     height: 320px;
     border-radius: 12px;
     background-color: #ffffff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+    box-shadow: 8px 8px 6px rgb(24 22 22 / 46%);
     overflow: hidden;
     transition: transform 0.2s ease;
+    border: 10px solid #4d4d4d;
 }
 
 .character-container:hover {
@@ -52,23 +51,80 @@ h1.tittle {
 .eye-accessory { z-index: 7; }
 
 .controls {
-    display: grid;
-    gap: 16px;
-    width: 100%;
-    max-width: 400px;
-    background-color: #ffffff;
+    background-color: #4d4d4d;
     padding: 20px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    display: flex;
+    gap: 8px;
+    flex-direction: column;
+    width: 100%;
+    max-width: 700px;
+    height: 200px;
     border-radius: 12px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+/* WebKit (Chrome, Safari, Edge) scrollbar styles */
+.controls::-webkit-scrollbar {
+    width: 18px; /* Scrollbar width */
+}
+
+.controls::-webkit-scrollbar-track {
+    background: #4d4d4d; /* Track color matches control-group background */
+    border-radius: 12px;
+}
+
+.controls::-webkit-scrollbar-thumb {
+    background: wheat; /* Slider button color */
+    border-radius: 12px;
+    border: 2px solid #4d4d4d; /* Optional: border for better contrast */
+}
+
+.controls::-webkit-scrollbar-thumb:hover {
+    background: #f5deb3; /* Slightly darker wheat on hover */
+}
+
+/* Firefox scrollbar styles */
+.controls {
+    scrollbar-width:inherit; /* Thin scrollbar */
+    scrollbar-color: wheat #4d4d4d; /* Thumb wheat, track matches control-group */
 }
 
 .control-group {
     display: flex;
+    flex-direction: row;
     align-items: center;
-    gap: 12px;
-    padding: 8px 0;
+    justify-content: flex-start;
+    gap: 15px;
+    padding: 20px;
+    background-color: #4d4d4d;
+    color: wheat;
+    border: 1px solid wheat;
+    border-radius: 12px;
 }
 
+.separator {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+    justify-content: space-around;
+}
+.label-buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 50%;
+    gap: 15px;
+    flex-shrink: 0;
+}
+.cycle-separator {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
 .control-group span {
     font-size: 1rem;
     font-weight: 500;
@@ -85,26 +141,45 @@ h1.tittle {
 .color-pickers {
     display: flex;
     gap: 8px;
-    flex-wrap: wrap;
+    flex-wrap: wrap; 
+    flex-grow: 1; 
+    min-width: 0;
 }
-
-button {
+.picker {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 100px;
+  height: 100px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.picker::-webkit-color-swatch {
+  border-radius: 15px;
+  border: none;
+}
+.picker::-moz-color-swatch {
+  border-radius: 15px;
+  border: none;
+}
+.button {
     padding: 8px 16px;
     font-size: 0.95rem;
     font-weight: 500;
-    color: #ffffff;
-    background-color: #3b82f6;
+    color: #4d4d4d;
+    background-color: #f5deb3;
     border: none;
     border-radius: 6px;
     cursor: pointer;
     transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
-button:hover {
-    background-color: #2563eb;
+.button:hover {
+    background-color: #f5deb3b6;
 }
 
-button:active {
+.button:active {
     transform: scale(0.98);
 }
 
@@ -189,7 +264,7 @@ select:focus {
     }
 
     .controls {
-        width: 100%;
+        width: 90%;
         max-width: 100%;
         padding: 16px;
     }
@@ -223,4 +298,20 @@ select:focus {
     select {
         width: 100%;
     }
+}
+.btn {
+    padding: 8px 16px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+.btn :hover{
+    background-color: #a3171780;
+}
+.download {
+    color: #f5deb3;
+    background-color: #4d4d4d;
 }
